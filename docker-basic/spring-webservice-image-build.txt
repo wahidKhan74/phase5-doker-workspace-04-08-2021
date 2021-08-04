@@ -1,0 +1,12 @@
+# 1. create a ecom-webservice docker image.
+> sudo docker image build -t ecom-webservice .
+
+# 2. create a container from docker image.
+> sudo docker container run  --name ecom-webserver -p 8081:8081 -d ecom-webservice
+
+
+# 3. push a ecom-webservice image.
+> sudo docker tag ecom-webservice:latest wahid74/ecom-webservice
+> sudo docker tag ecom-webservice:latest wahid74/ecom-webservice:v1.0.0
+> sudo docker push wahid74/ecom-webservice
+> sudo docker push wahid74/ecom-webservice:v1.0.0
