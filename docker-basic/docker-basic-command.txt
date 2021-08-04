@@ -1,0 +1,35 @@
+# docker version
+sudo docker --version
+sudo docker -v
+
+# docker info
+sudo docker info
+
+# list docker containers
+sudo docker container ls
+sudo docker ps -a
+
+# list docker images
+> sudo docker images
+
+# list docker volumes
+sudo docker volume ls
+
+# pull docker image from docker hub
+> sudo docker pull ubuntu 
+> sudo docker pull mysql 
+> sudo docker pull alphine 
+
+# create / run container
+> sudo docker run -it ubuntu /bin/bash
+
+# Host website within ubuntu image based container
+ > sudo docker run --name webserver -p 80:80 -it ubuntu /bin/bash
+   > apt update
+   > apt install apache2
+   > service apache2 status
+   > service apache2 start
+   > service apache2 stop
+   > apt install git -y
+   > git clone https://github.com/wahidKhan74/phase4-bootstrap-website.git
+    > cp -r phase4-bootstrap-website/* /var/www/html
