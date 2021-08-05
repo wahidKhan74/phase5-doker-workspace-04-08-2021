@@ -1,0 +1,18 @@
+# Jenkins is java based CI server
+> sudo apt install default-jdk
+> sudo java -version
+
+# install Jenkins server in ubuntu
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+
+# Service verification
+> sudo service jenkins status
+> sudo service jenkins start
+> sudo service jenkins stop
+> sudo service jenkins restart 
+
+verify jenkins : localhost:8080  , ec2 -> <ip address>:8080

@@ -1,0 +1,34 @@
+# first initialize a docker swarm cluster
+-> sudo docker swarm init
+
+# To add a worker to this swarm, run the following command:
+-> docker swarm join --token SWMTKN-1-2tppy4jpzsgoappbyuuwdxxmb9flgical8np0ej2oruy7u7xhz-celo9q2thwffv6d0x6gq5r91h 172.31.35.176:2377
+
+# verify created node 
+-> sudo docker node ls
+
+# deploy docker container based on custome image to docker swarm cluster.
+-> sudo docker service create -p 8081:8081 --name ecom-webserver ecom-webservice
+
+# list services
+-> sudo docker service ls
+
+
+#list container
+-> sudo docker ps -a
+
+------------------------------------------------------------------------
+2. scalling up docker container with docker swarm
+------------------------------------------------------------------------
+
+# increase the servce replica 
+-> sudo docker service scale ecom-webserver=4
+
+# list service 
+-> sudo docker service ls
+
+# list container
+-> sudo docker ps -a
+
+# decrease the servce replica 
+-> sudo docker service scale ecom-webserver=1
